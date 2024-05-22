@@ -4,6 +4,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
 @base <https://oosdpontology.net/> .
 
 <https://oosdpontology.net> rdf:type owl:Ontology ;
@@ -26,5 +27,260 @@
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 rdf:type rdf:type owl:AnnotationProperty .
 
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember
+collectionentity:hasMember rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#isMemberOf
+collectionentity:isMemberOf rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://oosdpontology.net/AbstractFactory
+:AbstractFactory rdf:type owl:Class ;
+                 rdfs:subClassOf :CreationalPattern ;
+                 rdfs:comment "Provide an interface for creating families of related or dependent objects without specifying their concrete classes."@en ;
+                 rdfs:label "Abstract Factory"@en .
+
+
+###  https://oosdpontology.net/Adapter
+:Adapter rdf:type owl:Class ;
+         rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/BehavioralPattern
+:BehavioralPattern rdf:type owl:Class ;
+                   rdfs:comment "Behavioral patterns are concerned with algorithms and the assignment of responsibilities between objects. Behavioral patterms describe not just patterns of objects or classes but also the patterns of communication between them. These patterns characterize complex control flow that's difficult to follow at run-time. They shift your focus away from flow of control to let you concentrate just on the way objects are interconnected."@en-us ;
+                   rdfs:label "Behavioral Pattern"@en-us ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Behavioral_pattern" ,
+                                "https://www.wikidata.org/wiki/Q1063558" .
+
+
+###  https://oosdpontology.net/BehavioralPatterns
+:BehavioralPatterns rdf:type owl:Class .
+
+
+###  https://oosdpontology.net/Bridge
+:Bridge rdf:type owl:Class ;
+        rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/Builder
+:Builder rdf:type owl:Class ;
+         rdfs:subClassOf :CreationalPattern ;
+         rdfs:comment "Separate the construction of a comp;ex obect from ita representation so that the same construction process can create different representations."@en ;
+         rdfs:label "Builder"@en .
+
+
+###  https://oosdpontology.net/ChainOfResponsibility
+:ChainOfResponsibility rdf:type owl:Class ;
+                       rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Command
+:Command rdf:type owl:Class ;
+         rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Composite
+:Composite rdf:type owl:Class ;
+           rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/CreationalPattern
+:CreationalPattern rdf:type owl:Class ;
+                   rdfs:label "Creational Pattern"@en-us ,
+                              "Creational design patterns abstract the instantiation process. They help make a system independent of how its objects are created, composed, and represented. A class creational pattern uses inheritance to vary the class that's instantiated, whereas an object creational pattern will delegate instantiation to another object."@en-us ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Creational_pattern" ,
+                                "https://www.wikidata.org/wiki/Q1063550" .
+
+
+###  https://oosdpontology.net/CreationalPatterns
+:CreationalPatterns rdf:type owl:Class .
+
+
+###  https://oosdpontology.net/Decorator
+:Decorator rdf:type owl:Class ;
+           rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/Facade
+:Facade rdf:type owl:Class ;
+        rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/FactoryMethod
+:FactoryMethod rdf:type owl:Class ;
+               rdfs:subClassOf :CreationalPattern ;
+               rdfs:comment "Define an interface for create an obect, but let subclasses decide which class to substantiate. Factory Method lets a class defer instantiation to subclasses."@en ;
+               rdfs:label "Factory Method"@en .
+
+
+###  https://oosdpontology.net/Flyweight
+:Flyweight rdf:type owl:Class ;
+           rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/Interpreter
+:Interpreter rdf:type owl:Class ;
+             rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Iterator
+:Iterator rdf:type owl:Class ;
+          rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Mediator
+:Mediator rdf:type owl:Class ;
+          rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Memento
+:Memento rdf:type owl:Class ;
+         rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Observer
+:Observer rdf:type owl:Class ;
+          rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Prototype
+:Prototype rdf:type owl:Class ;
+           rdfs:subClassOf :CreationalPattern ;
+           rdfs:label "Prototype"@en .
+
+
+###  https://oosdpontology.net/Proxy
+:Proxy rdf:type owl:Class ;
+       rdfs:subClassOf :StructuralPattern .
+
+
+###  https://oosdpontology.net/Singleton
+:Singleton rdf:type owl:Class ;
+           rdfs:subClassOf :CreationalPattern .
+
+
+###  https://oosdpontology.net/State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Strategy
+:Strategy rdf:type owl:Class ;
+          rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/StructuralPattern
+:StructuralPattern rdf:type owl:Class ;
+                   rdfs:comment "Structural patterns are concerned with how classes and objects are composed to form larger stuctures. Structural class patterns use inheritance to compose interfaces or implementations. As a simple example, consider how multiple inhritance mixes two or more classes into one. The result is a class that combines the properties of its parent classes. This patterns is particularly useful for making independently developed class libraries work together. Another example is the class form of the Adapter (139) pattern. In general, an adapter makes one interface (the adaptee's) conform to another, thereby providing a uniform abstraction of different interfaces. A class adapter accomplishes this by inheriting privately from an adptee class. The adapter then expresses its interface in terms of the adaptee's."@en-us ;
+                   rdfs:label "Structural Pattern"@en-us ;
+                   rdfs:seeAlso "https://en.wikipedia.org/wiki/Structural_pattern" ,
+                                "https://www.wikidata.org/wiki/Q635280" .
+
+
+###  https://oosdpontology.net/StructuralPatterns
+:StructuralPatterns rdf:type owl:Class .
+
+
+###  https://oosdpontology.net/TemplateMethod
+:TemplateMethod rdf:type owl:Class ;
+                rdfs:subClassOf :BehavioralPattern .
+
+
+###  https://oosdpontology.net/Visitor
+:Visitor rdf:type owl:Class ;
+         rdfs:subClassOf :BehavioralPattern .
+
+
+[ rdf:type [ rdf:type owl:Restriction ;
+             owl:onProperty collectionentity:isMemberOf ;
+             owl:someValuesFrom :BehavioralPatterns
+           ]
+] .
+
+[ rdf:type [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :AbstractFactory
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Builder
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :FactoryMethod
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Prototype
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Singleton
+            ]
+ ] .
+
+[ rdf:type [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:isMemberOf ;
+              owl:someValuesFrom :BehavioralPatterns
+            ]
+ ] .
+
+[ rdf:type [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :ChainOfResponsibility
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Command
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Interpreter
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Iterator
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Mediator
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Memento
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Observer
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :State
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Strategy
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :TemplateMethod
+            ] ,
+            [ rdf:type owl:Restriction ;
+              owl:onProperty collectionentity:hasMember ;
+              owl:someValuesFrom :Visitor
+            ]
+ ] .
 
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
