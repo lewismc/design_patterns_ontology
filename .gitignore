@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+
+oosdp_ontology.properties
